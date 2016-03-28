@@ -7,8 +7,6 @@ cache:
   directories:
     - node_modules
 
-cache: bundler
-
 before_install:
 
 install:

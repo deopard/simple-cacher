@@ -42,9 +42,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: [
-      'Chrome'
-    ],
+    browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'],
 
     // Which plugins to enable
     // plugins: [
