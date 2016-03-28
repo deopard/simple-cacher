@@ -1,6 +1,6 @@
 {
   "name": "simple-cacher",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Simple caching class for javascript to cache collections and other objects",
   "main": "index.js",
   "directories": {

@@ -1,4 +1,4 @@
-# simple-cacher
+# simple-cacher ![TravisCI](https://travis-ci.org/deopard/simple-cacher.svg?branch=master)
 
 Simple caching class for javascript to cache collections and other objects
 

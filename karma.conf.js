@@ -34,6 +34,13 @@ module.exports = function(config) {
     // web server port
     port: 8080,
 
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    },
+
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary
