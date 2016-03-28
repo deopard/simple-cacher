@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       },
     },
 
-    clean: ['dist', 'doc']
+    clean: ['dist']
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
