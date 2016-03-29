@@ -68,6 +68,17 @@ module.exports = function(grunt) {
       },
     },
 
+    shim: {
+      dest: 'src/array.shim.js',
+      modules: [
+        'es6.array.filter',
+        'es6.array.find',
+        'es6.array.find-index',
+        'es6.array.for-each',
+        'es6.array.is-array'
+      ]
+    },
+
     clean: ['dist']
   });
 
@@ -79,7 +90,26 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'babel', 'uglify', 'test', 'jsdoc2md']);
+  grunt.registerTask('default', ['clean', 'babel', 'shim', 'uglify', 'test', 'jsdoc2md']);
 
   grunt.registerTask('test', 'Run unit tests', ['jshint', 'karma:continuous']);
+
+  grunt.registerTask('shim', 'Create shim file', function () {
+    const fs = require('fs');
+    let done = this.async();
+
+    require('core-js-builder')({
+      modules: grunt.config('shim.modules'),
+      uglify: true
+    })
+    .then(code => {
+      fs.writeFile(grunt.config('shim.dest'), code, err => {
+        if (err) {
+          grunt.log.writeln(err);
+        }
+        grunt.log.writeln('Shim file saved.');
+        done();
+      });
+    });
+  });
 };
