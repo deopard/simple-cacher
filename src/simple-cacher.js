@@ -20,7 +20,7 @@ class Cacher {
     */
   static cache (key, value, id='id') {
     // Force cache as single object
-    if (Object.is(id, null)) {
+    if (id === null) {
       return this._cacheSingleObject(key, value);
     }
 
@@ -83,12 +83,12 @@ class Cacher {
     }
 
     // single object cache
-    if (Object.is(storage.id, null)) {
+    if (storage.id === null) {
       return storage.data;
     }
 
     // get all cache
-    if (Object.is(ids, null)) {
+    if (ids === null) {
       return storage.data;
     }
 

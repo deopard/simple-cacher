@@ -37,6 +37,7 @@ module.exports = function(grunt) {
 
     babel: {
       options: {
+        comments: false,
         sourceMap: true,
         presets: ['es2015']
       },
@@ -50,7 +51,8 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'dist/simple-cacher.min.js': ['dist/simple-cacher.js']
+          'dist/simple-cacher.min.js': ['dist/simple-cacher.js'],
+          'dist/array.shim.js': ['src/array.shim.js']
         },
         options: {
           sourceMap: true,

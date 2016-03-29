@@ -2,6 +2,13 @@
 
 Simple caching class for javascript to cache collections and other objects
 
+## ES6
+
+This library is built in es6 syntax. By default, the dist file will be traspiled by Babel, but some features (Array prototype features) will still need shims. `array.shims.js` is a custom built core-js file which includes the features to run in non-es6 supported environment.
+
+In a easy way of saying, if you DON'T have es6 Array support where you're using this, include the `dist/array.shim.js` file before `dist/simple-cacher.min.js` file.
+
+If you have es6 array support, do not include `dist/array.shim.js` file.
 
 ## Testing
 

@@ -21,8 +21,8 @@ module.exports = function(config) {
     files: [
       // bower:js
       // endbower
-      // 'src/**/*.js',
-      'dist/simple-cacher.js',
+      'src/array.shim.js',
+      'src/simple-cacher.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
