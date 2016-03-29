@@ -106,34 +106,34 @@ describe('Cacher', function () {
   });
 
 
-  // Devare tests
+  // Delete tests
 
-  it('should devare by id in collection', function () {
+  it('should delete by id in collection', function () {
     Cacher.cache('test', collection);
-    Cacher.devare('test', 2);
+    Cacher.delete('test', 2);
     expect(Cacher.hit('test')).toEqual([
       { id: 1, name: 'tom' },
       { id: 3, name: 'smith' }
     ]);
   });
 
-  it('should devare by ids in collection', function () {
+  it('should delete by ids in collection', function () {
     Cacher.cache('test', collection);
-    Cacher.devare('test', [2, 3]);
+    Cacher.delete('test', [2, 3]);
     expect(Cacher.hit('test')).toEqual([
       { id: 1, name: 'tom' }
     ]);
   });
 
-  it('should devare all in collection', function () {
+  it('should delete all in collection', function () {
     Cacher.cache('test', collection);
-    Cacher.devare('test');
+    Cacher.delete('test');
     expect(Cacher.hit('test')).toEqual([]);
   });
 
-  it('should devare single object', function () {
+  it('should delete single object', function () {
     Cacher.cache('test', fixtureSingle);
-    Cacher.devare('test');
+    Cacher.delete('test');
     expect(Cacher.hit('test')).toBe(null);
   });
 });
