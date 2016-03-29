@@ -18,7 +18,12 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to load in the browser
-    files: [
+    files: process.env.TRAVIS ? [
+      'dist/array.shim.js',
+      'dist/simple-cacher.js',
+      'test/mock/**/*.js',
+      'test/spec/**/*.js'
+    ] : [
       // bower:js
       // endbower
       'src/array.shim.js',
