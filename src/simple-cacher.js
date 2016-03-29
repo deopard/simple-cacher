@@ -94,7 +94,7 @@ class Cacher {
 
     return Array.isArray(ids) ?
       // hit array
-      storage.data.filter(x => ids.includes(x.id)) :
+      storage.data.filter(x => ids.indexOf(x.id) !== -1) :
 
       // hit single cache
       storage.data.find(x => x.id === ids) || null;
@@ -136,7 +136,7 @@ class Cacher {
       ids = [ids];
     }
 
-    storage.data = storage.data.filter(x => !ids.includes(x.id));
+    storage.data = storage.data.filter(x => ids.indexOf(x.id) === -1);
   }
 
   /**
