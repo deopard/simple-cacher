@@ -1,0 +1,21 @@
+{
+  "name": "simple-cacher",
+  "description": "Simple caching class for javascript to cache collections and other objects",
+  "main": "index.js",
+  "authors": [
+    "Tom Kim"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "cache"
+  ],
+  "homepage": "https://github.com/deopard/simple-cacher",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
